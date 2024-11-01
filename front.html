@@ -7,19 +7,15 @@
 </head>
 <body>
     <h1>Gerar alerta</h1>
-<button onclick="gerarAlerta('banana')">
-    banana
-</button>
-<button onclick="gerarAlerta('minhoca')">
-    minhoca
-<script>
-function gerarAlerta(parametro) {
-    fetch(`../back/${parametro}.txt`)
-        .then(response => response.text())
-        .then(data => alert(data))
-        .catch(error => console.error('Erro ao carregar o arquivo:', error));
-}
-</script>
-
+    <button onclick="gerarAlerta('banana')">banana</button>
+    <button onclick="gerarAlerta('minhoca')">minhoca</button>
+    <script>
+        function gerarAlerta(parametro) {
+            fetch(`http://localhost:8080/${parametro}.txt`)
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(error => console.error('Erro ao carregar o arquivo:', error));
+        }
+    </script>
 </body>
 </html>
